@@ -86,25 +86,25 @@ ProcessInfo::~ProcessInfo()
 
 ProcessInfo::ProcessInfo(const ProcessInfo& other) 
 {
-	pid = other.pid;
-	ppid = other.ppid;
+    pid = other.pid;
+    ppid = other.ppid;
     valid = other.valid;
 
 }
 
 ProcessInfo& ProcessInfo::operator=(const ProcessInfo& other) 
 {
-	if (this != &other) {
-		pid = other.pid;
-		ppid = other.ppid;
+    if (this != &other) {
+        pid = other.pid;
+        ppid = other.ppid;
         valid = other.valid;
-	}
-	return *this;
+    }
+    return *this;
 }
 
 DWORD ProcessInfo::GetPid() 
 {
-	return pid;
+    return pid;
 }
 
 DWORD ProcessInfo::GetPpid() 
@@ -152,12 +152,12 @@ DWORD ProcessInfo::GetPpid()
 bool ProcessInfo::ParentValid()
 {
     if (!valid) {
-		return false;
-	}
+        return false;
+    }
     if (!ppid) {
-		GetPpid();
-	}
-	return valid;
+        GetPpid();
+    }
+    return valid;
 }
 
 HWND ProcessInfo::GetParentProcessHwnd()
@@ -187,9 +187,9 @@ HWND ProcessInfo::GetParentProcessHwnd()
 ProcessInfo ProcessInfo::GetParent()
 {
     if (!valid || !GetPpid()) {
-		return ProcessInfo(0);
-	}
-	return ProcessInfo(ppid);
+        return ProcessInfo(0);
+    }
+    return ProcessInfo(ppid);
 }
 
 

@@ -14,16 +14,16 @@ struct Table {
 };
 ;
 const Table options[] = {
-	{ "hide", SWP_HIDEWINDOW,  },
-	{ "unhide", SWP_SHOWWINDOW },
+    { "hide", SWP_HIDEWINDOW,  },
+    { "unhide", SWP_SHOWWINDOW },
     { NULL, 0 }
 };
 
 const int ARG_VERBOSE = 1;
 
 Table flags[] = {
-	{ "-v", ARG_VERBOSE },
-	{ NULL, 0 }
+    { "-v", ARG_VERBOSE },
+    { NULL, 0 }
 };
 
 int main(int argc, char* argv[])
@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
                     fprintf(stderr, "Duplicate flag: %s\n", argv[arg]);
                 }
                 else {
-					theFlags |= flags[i].code;
+                    theFlags |= flags[i].code;
                 }
                 break;
             }
@@ -90,10 +90,10 @@ int main(int argc, char* argv[])
         }
   
         if (parent) {
-			SetWindowPos(parent, NULL, 0, 0, 0, 0, flags | action);
+            SetWindowPos(parent, NULL, 0, 0, 0, 0, flags | action);
             break;
-		}
-		pi = pi.GetParent();
+        }
+        pi = pi.GetParent();
   
     }
 
